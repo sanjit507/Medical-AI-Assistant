@@ -57,14 +57,14 @@ The project splits workflows into two key pipelines: **Data Ingestion** (pre-com
 
 ```mermaid
 flowchart TD
-    subgraph Data Ingestion Pipeline (store_index.py)
+    subgraph "Data Ingestion Pipeline (store_index.py)"
         A[Medical Book PDF] -->|DirectoryLoader| B[Raw Text Documents]
         B -->|RecursiveCharacterTextSplitter| C[Text Chunks (Size: 500, Overlap: 20)]
         C -->|HuggingFace Embeddings| D[Dense Semantic Vectors]
         D -->|Upload| E[(Pinecone Vector DB)]
     end
 
-    subgraph Chatbot Query Pipeline (app.py)
+    subgraph "Chatbot Query Pipeline (app.py)"
         F[User Query via Web UI] -->|HuggingFace Embeddings| G[Query Vector]
         G -->|Semantic Similarity Search| E
         E -->|Retrieve Top K=2 Matches| H[Context Passages]
