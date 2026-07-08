@@ -24,6 +24,19 @@ The **Medical AI Assistant** is a web-based chatbot system that utilizes **Retri
 Unlike general-purpose conversational LLMs that may suffer from hallucinations, this assistant grounds its responses in a trusted source of medical knowledge (e.g., a comprehensive medical textbook or reference guide). By combining **semantic search** using a vector database with Google's state-of-the-art **Gemini model**, it ensures that answers are both medically informed and naturally phrased.
 
 ---
+<img width="1815" height="829" alt="image" src="https://github.com/user-attachments/assets/00e897d2-36ed-4dab-b40a-468dc2f098cf" />
+
+Running on AWS 
+
+<img width="1370" height="844" alt="image" src="https://github.com/user-attachments/assets/15b1e013-1b59-4d7b-90cc-9028f138e2b8" />
+Testing 
+
+
+<img width="1896" height="567" alt="image" src="https://github.com/user-attachments/assets/a8409978-b641-43f4-b879-82278f71e9aa" />
+
+Github Action 
+
+
 
 ## 💡 Key Use Cases
 
