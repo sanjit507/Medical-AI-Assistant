@@ -59,7 +59,7 @@ The project splits workflows into two key pipelines: **Data Ingestion** (pre-com
 flowchart TD
     subgraph "Data Ingestion Pipeline (store_index.py)"
         A[Medical Book PDF] -->|DirectoryLoader| B[Raw Text Documents]
-        B -->|RecursiveCharacterTextSplitter| C[Text Chunks (Size: 500, Overlap: 20)]
+        B -->|RecursiveCharacterTextSplitter| C["Text Chunks (Size: 500, Overlap: 20)"]
         C -->|HuggingFace Embeddings| D[Dense Semantic Vectors]
         D -->|Upload| E[(Pinecone Vector DB)]
     end
@@ -205,6 +205,3 @@ Open your browser and navigate to `http://localhost:8080` (or `http://127.0.0.1:
 1.  **Chat Interface:** Type your medical inquiry in the message input field at the bottom and click the Send icon.
 2.  **RAG Processing:** The system will search for contextual references in `Medical_book.pdf` stored in Pinecone, pass the top findings to Google Gemini, and display the answer.
 3.  **Accuracy Safeguards:** If you ask a medical question that is not covered by the text, the assistant is instructed not to hallucinate, responding that it does not know the answer.
-hi .
-
-
