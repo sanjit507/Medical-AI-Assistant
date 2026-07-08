@@ -1,0 +1,55 @@
+# Version control
+.git
+.gitignore
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+
+# Environment variables — never bake secrets into the image
+.env
+.env.*
+
+# IDE / editor config
+.vscode/
+.idea/
+*.code-workspace
+
+# OS artefacts
+.DS_Store
+Thumbs.db
+
+# Jupyter / research notebooks
+research/
+*.ipynb
+.ipynb_checkpoints/
+
+# Logs & coverage
+*.log
+.coverage
+htmlcov/
+coverage.xml
+
+# CI/CD
+.github/
+
+# Documentation (not needed at runtime)
+README.md
+DOCUMENTATION.md
+
+# Tests (not needed at runtime)
+tests/
+
+# Large data files — mount via Docker volume at runtime instead
+# Comment out if you want to BAKE the PDF into the image
+data/
