@@ -13,8 +13,8 @@ app = Flask(__name__)
 
 load_dotenv()
 
-PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
-PINECONE_API_ENV = os.environ.get('PINECONE_API_ENV')
+PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
+PINECONE_API_ENV = os.environ.get("PINECONE_API_ENV")
 
 
 embeddings = download_hugging_face_embeddings()
@@ -41,14 +41,15 @@ llm = ChatGoogleGenerativeAI(
 qa = RetrievalQA.from_chain_type(
     llm=llm,
     chain_type="stuff",
-    retriever=docsearch.as_retriever(search_kwargs={'k': 2}),
+    retriever=docsearch.as_retriever(search_kwargs={"k": 2}),
     return_source_documents=True,
-    chain_type_kwargs=chain_type_kwargs)
+    chain_type_kwargs=chain_type_kwargs,
+)
 
 
 @app.route("/")
 def index():
-    return render_template('chat.html')
+    return render_template("chat.html")
 
 
 @app.route("/get", methods=["GET", "POST"])
@@ -61,5 +62,5 @@ def chat():
     return str(result["result"])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080, debug=True)

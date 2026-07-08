@@ -6,8 +6,8 @@ import os
 
 load_dotenv()
 
-PINECONE_API_KEY = os.environ.get('PINECONE_API_KEY')
-PINECONE_API_ENV = os.environ.get('PINECONE_API_ENV')
+PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
+PINECONE_API_ENV = os.environ.get("PINECONE_API_ENV")
 
 # print(PINECONE_API_KEY)
 # print(PINECONE_API_ENV)
@@ -23,6 +23,4 @@ pc = Pinecone(api_key=PINECONE_API_KEY)
 index_name = "aiddata"
 
 # Creating Embeddings for Each of The Text Chunks & storing
-docsearch = PineconeVectorStore.from_texts(
-    [t.page_content for t in text_chunks], embeddings, index_name=index_name
-)
+docsearch = PineconeVectorStore.from_texts([t.page_content for t in text_chunks], embeddings, index_name=index_name)
