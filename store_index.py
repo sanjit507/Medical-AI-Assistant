@@ -17,10 +17,12 @@ text_chunks = text_split(extracted_data)
 embeddings = download_hugging_face_embeddings()
 
 
-#Initializing the Pinecone client
+# Initializing the Pinecone client
 pc = Pinecone(api_key=PINECONE_API_KEY)
 
-index_name="aiddata"
+index_name = "aiddata"
 
-#Creating Embeddings for Each of The Text Chunks & storing
-docsearch=PineconeVectorStore.from_texts([t.page_content for t in text_chunks], embeddings, index_name=index_name)
+# Creating Embeddings for Each of The Text Chunks & storing
+docsearch = PineconeVectorStore.from_texts(
+    [t.page_content for t in text_chunks], embeddings, index_name=index_name
+)
