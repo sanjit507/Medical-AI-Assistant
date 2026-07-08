@@ -26,6 +26,9 @@ Unlike general-purpose conversational LLMs that may suffer from hallucinations, 
 ---
 <img width="1815" height="829" alt="image" src="https://github.com/user-attachments/assets/00e897d2-36ed-4dab-b40a-468dc2f098cf" />
 
+
+![Uploading image.png…]()
+
 Running on AWS 
 
 <img width="1370" height="844" alt="image" src="https://github.com/user-attachments/assets/15b1e013-1b59-4d7b-90cc-9028f138e2b8" />
